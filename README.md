@@ -1,4 +1,7 @@
 # Augmented-Reality Surgical Device
+
+#### [Project Report](https://docs.google.com/document/d/1bnFGWditMPeq1qzxK1kd7uv6v_H7xCjCT8Ha8rW6Sdk/edit?usp=sharing)
+
 ## A Comprehensive Approach to Tumor Detection using RGB, NIR, and Immersive 3D Visualization
 
 **By**  
