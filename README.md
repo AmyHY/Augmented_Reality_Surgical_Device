@@ -1,4 +1,4 @@
-# Augmented-Reality Surgical_Device
+# Augmented-Reality Surgical Device
 ## A Comprehensive Approach to Tumor Detection using RGB, NIR, and Immersive 3D Visualization
 
 **By**  
