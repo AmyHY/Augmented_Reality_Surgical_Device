@@ -67,7 +67,7 @@ Our proposed solution addresses the limitations of traditional tumor removal pro
 
 ### 1.3 Visual Aid
 
-![Visual Aid](images/image1)
+![Visual Aid](images/image1.png)
 
 ### 1.4 High Level Requirements
 
@@ -79,7 +79,7 @@ The project aims to achieve specific hardware and software requirements for deve
 
 ### 2.1 Block Diagram
 
-![Block Diagram](images/image2)
+![Block Diagram](images/image2.png)
 
 ### 2.2 Casing Module
 
@@ -102,7 +102,7 @@ As seen above, the imaging module employs a CMount Lens, a beam splitter, a Visi
 
 The goal of the PCB is to hold an IMU unit (ICM-20948 chip) and transfer the accelerometer data to Jetson Nano via I2C communication. Therefore, the remaining aspects of the PCB design serve to complement and support the functionality of the IMU. Due to the simple purpose of the PCB, the design process was fairly simple, and the major challenge lay in soldering the PCB, as the IMU and the voltage regulator were both too small to be hand-soldered. We managed to solder the PCB successfully using a microscope, flux, and soldering paste.
 
-![Physical PCB](images/image3)
+![Physical PCB](images/image3.png)
 
 #### 2.4B Design details
 
@@ -126,7 +126,7 @@ The pipeline from photo capture to 3D modeling has several key requirements to e
 
 Once we have captured an acceptable amount of images via our optimal frame selection process, we begin transferring them from the Jetson to the Mac via a Secure Copy Protocol (SCP) based connection. This involves a client-server socket relationship to transfer the folder of images into the XCode environment on the Mac for use in photogrammetry. On the server side (Jetson) this is embedded within our script for capturing images using the CSI ports, placing the images in an easily accessible directory. On the client side (Mac), once correct SSH connection settings are in place, we can run the script establishing a single TCP connection (see code below). 
 
-![TCP code](images/image4)
+![TCP code](images/image4.png)
 
 After receiving images via the above process, Apple’s Object Capture generates a USDZ file on the client side. This USDZ file can then be handled in our Xcode application for viewing and interacting.
 
@@ -157,14 +157,14 @@ An integral part of constructing the 3D model is the image quality of the object
 
 Our system successfully verifies all requirements in regards to 3D modeling. We see according to Figure 5 that high quality mesh reconstruction can be maintained with as low as 5 photos, taking only six seconds for photogrammetry to run, outperforming the 20 second limit we imposed on ourselves. 
 
-![3D_reconstruction](images/image5)
+![3D_reconstruction](images/image5.png)
 
 ### 3.5 AR Visualization Module
 
 To reiterate, this module is responsible for interacting with generated 3D models and visualizing the NIR detections in augmented reality via the Apple Vision Pro. We succeed in verifying all functionality components in regards to the 3D model in the vision pro environment, namely, the translation and resizing functionality. We also demonstrate the successful implementation of the file picker element, allowing the user to pick between all available 3D models.
 
-![3D_Model_in_Vision_Pro_Application](images/image6)
-![File_Picker](images/image7)
+![3D_Model_in_Vision_Pro_Application](images/image6.png)
+![File_Picker](images/image7.png)
 
 We failed to enable NIR data streaming within our Xcode environment. This process requires multithreading in swift, and due to the timing constraints of the project, we came up short on time to implement it. However, we implemented the second half of this part of the system, where we abstract away the incoming NIR, and generate a 3D highlight for an NIR “detection” . The 3D highlight stays in its position relative to the environment, therefore part of our requirement for this section.
 
